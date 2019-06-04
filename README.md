@@ -5,7 +5,11 @@ This project contains an API for Java Virtual Machine based languages to access 
 or [Spring Data Geode](https://spring.io/projects/spring-data-geode).
 
 
+**Simple Configuration**
+
 This API is cloud-native friendly. Many of the configurations such as the GemFire LOCATORS connection host[port] can be set using environment variables and or JVM Properties. It requires no XML or Java property files to configure the GemFire connection.
+
+**Easy Security**
 
 It provides out of box security credential login support. The username and password can be set using an environment variable or JVM property. Password encrypted/decryption is also supported.
  It  supports loading keystore/trustores from the application CLASSPATH for SSL/TLS communication with the GemFire cluster.
