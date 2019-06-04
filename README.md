@@ -143,4 +143,4 @@ Get the Apache Geode/GemFire client cache
 
 See the following for instruction to down the GemFire artifacts.
 
-	[https://gemfire.docs.pivotal.io/gemfire/getting_started/installation/obtain_gemfire_maven.html](https://gemfire.docs.pivotal.io/gemfire/getting_started/installation/obtain_gemfire_maven.html)
+[https://gemfire.docs.pivotal.io/gemfire/getting_started/installation/obtain_gemfire_maven.html](https://gemfire.docs.pivotal.io/gemfire/getting_started/installation/obtain_gemfire_maven.html) 
