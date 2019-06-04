@@ -1,6 +1,14 @@
 # Apache Geode/Pivotal GemFire/Pivotal Cloud Cache (PCC)   Extension 
 
 
+The API is an alternative for Java Virtual Machine based language with access to Apache Geode
+based data grid/cache instances. It provides a simpler configuration than Spring Data GemFire
+or Spring Data Geode.
+
+
+This implement is based on an [Apache Geode/GemFire Enterprise Data Integration framework](https://github.com/nyla-solutions/gedi-geode)
+
+
 Note that this API is available in the [Maven Repository](https://mvnrepository.com/artifact/com.github.nyla-solutions/dataTx-geode-extensions-core).
 
 	
@@ -12,7 +20,7 @@ Note that this API is available in the [Maven Repository](https://mvnrepository.
 
 
 
-## GeodeClient API
+## GeodeClient API Developer Guide
 
 **Setup Environment Single locator**
 
