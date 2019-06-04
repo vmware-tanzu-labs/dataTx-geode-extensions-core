@@ -6,6 +6,12 @@ based data grid/cache instances. It provides a simpler configuration than Spring
 or Spring Data Geode.
 
 
+This API is cloud-native friendly. Many of the configurations such as the GemFire LOCATORS connection host[port] can be set using environment variables and or JVM Properties. It requires no XML or Java property files to configure the GemFire connection.
+
+It provides out of box security credential login support. The username and password can be set using an environment variable or JVM property. Password encrypted/decryption is also supported.
+ It  supports loading keystore/trustores from the application CLASSPATH for SSL/TLS communication with the GemFire cluster.
+
+
 This implement is based on the [Apache Geode/GemFire Enterprise Data Integration framework](https://github.com/nyla-solutions/gedi-geode) open source implementation.
 
 
