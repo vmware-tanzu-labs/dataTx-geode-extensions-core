@@ -6,7 +6,7 @@ based data grid/cache instances. It provides a simpler configuration than Spring
 or Spring Data Geode.
 
 
-This implement is based on an [Apache Geode/GemFire Enterprise Data Integration framework](https://github.com/nyla-solutions/gedi-geode)
+This implement is based on the [Apache Geode/GemFire Enterprise Data Integration framework](https://github.com/nyla-solutions/gedi-geode) open source implementation.
 
 
 Note that this API is available in the [Maven Repository](https://mvnrepository.com/artifact/com.github.nyla-solutions/dataTx-geode-extensions-core).
