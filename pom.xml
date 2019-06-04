@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.pivotal.services.dataTx</groupId>
 	<artifactId>dataTx-geode-extensions-core</artifactId>
-	<version>1.2.2</version>
+	<version>2.0.0</version>
 	<name>dataTx-geode-extensions-core</name>
-	<description>GemFire Enterprise Data Integration - common development extensions powered by Apache Geode</description>
+	<description>Apache Geode/GemFire extensions - common development extensions powered by Apache Geode</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>

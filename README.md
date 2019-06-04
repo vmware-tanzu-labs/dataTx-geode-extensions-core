@@ -1,11 +1,11 @@
-# Geode Extension 
+# Apache Geode/Pivotal GemFire/Pivotal Cloud Cache (PCC)   Extension 
 
 
 Note that this API is available in the [Maven Repository](https://mvnrepository.com/artifact/com.github.nyla-solutions/dataTx-geode-extensions-core).
 
 	
 	<dependency>
-	    <groupId>com.github.nyla-solutions</groupId>
+	    <groupId>io.pivotal.services.dataTx</groupId>
 	    <artifactId>dataTx-geode-extensions-core</artifactId>
 	    <version>${VERSION}</version>
 	</dependency>
@@ -82,11 +82,11 @@ see the properties below.
 
 -------------------------------------------------
 
-**Get a Apache Geode Connection**
+**Get a Apache Geode/GemFire Connection**
 
 	GeodeClient geodeClient = GeodeClient.connect()
 
-Get the Apache Geode client cache
+Get the Apache Geode/GemFire client cache
 	
 	ClientCache cache = geodeClient.getClientCache();
 		
