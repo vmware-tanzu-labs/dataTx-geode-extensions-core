@@ -441,47 +441,6 @@ public class SimpleObject implements Serializable
 	}
 	
 
-	/*
-	 * Overloaded properties are not supported
-	 * 
-	 * Ex: Exception 
-	 * 
-	 * [error 2015/01/14 10:08:35.979 EST server1 <Function Execution Processor1> tid=0x3d] org.codehaus.jackson.map.JsonMappingException: Conflicting setter definitions for property "overloadedRestriction": solutions.gedi.demo.data.SimpleObject#setOverloadedRestriction(1 params) vs solutions.gedi.demo.data.SimpleObject#setOverloadedRestriction(1 params)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createAndCache2(StdDeserializerProvider.java:315)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createAndCacheValueDeserializer(StdDeserializerProvider.java:290)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider.findValueDeserializer(StdDeserializerProvider.java:159)
-  	at org.codehaus.jackson.map.deser.std.StdDeserializer.findDeserializer(StdDeserializer.java:620)
-  	at org.codehaus.jackson.map.deser.BeanDeserializer.resolve(BeanDeserializer.java:379)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._resolveDeserializer(StdDeserializerProvider.java:407)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createAndCache2(StdDeserializerProvider.java:352)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createAndCacheValueDeserializer(StdDeserializerProvider.java:290)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider.findValueDeserializer(StdDeserializerProvider.java:159)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider.findTypedValueDeserializer(StdDeserializerProvider.java:180)
-  	at org.codehaus.jackson.map.ObjectMapper._findRootDeserializer(ObjectMapper.java:2829)
-  	at org.codehaus.jackson.map.ObjectMapper._readValue(ObjectMapper.java:2699)
-  	at org.codehaus.jackson.map.ObjectMapper.readValue(ObjectMapper.java:1286)
-  	at solutions.gedi.gemfire.operations.functions.ImportJsonFunction.importRegion(ImportJsonFunction.java:201)
-  	at solutions.gedi.gemfire.operations.functions.ImportJsonFunction.importOnRegion(ImportJsonFunction.java:125)
-  	at solutions.gedi.gemfire.operations.functions.ImportJsonFunction.execute(ImportJsonFunction.java:76)
-  	at com.gemstone.gemfire.internal.cache.execute.AbstractExecution.executeFunctionLocally(AbstractExecution.java:356)
-  	at com.gemstone.gemfire.internal.cache.execute.AbstractExecution$2.run(AbstractExecution.java:320)
-  	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-  	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-  	at com.gemstone.gemfire.distributed.internal.DistributionManager.runUntilShutdown(DistributionManager.java:726)
-  	at com.gemstone.gemfire.distributed.internal.DistributionManager$9$1.run(DistributionManager.java:1198)
-  	at java.lang.Thread.run(Thread.java:745)
-  Caused by: java.lang.IllegalArgumentException: Conflicting setter definitions for property "overloadedRestriction": solutions.gedi.demo.data.SimpleObject#setOverloadedRestriction(1 params) vs solutions.gedi.demo.data.SimpleObject#setOverloadedRestriction(1 params)
-  	at org.codehaus.jackson.map.introspect.POJOPropertyBuilder.getSetter(POJOPropertyBuilder.java:199)
-  	at org.codehaus.jackson.map.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:1161)
-  	at org.codehaus.jackson.map.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:707)
-  	at org.codehaus.jackson.map.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:636)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createDeserializer(StdDeserializerProvider.java:401)
-  	at org.codehaus.jackson.map.deser.StdDeserializerProvider._createAndCache2(StdDeserializerProvider.java:310)
-  	... 22 more
-	 * public void setOverloadedRestriction(Integer overloadedRestriction)
-	{
-		this.overloadedRestriction = String.valueOf(overloadedRestriction);
-	}*/
 
 
 	/**

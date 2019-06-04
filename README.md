@@ -1,12 +1,12 @@
 # Geode Extension 
 
 
-Note that this API is available in the [Maven Repository](https://mvnrepository.com/artifact/com.github.nyla-solutions/gedi-geode-extensions-core).
+Note that this API is available in the [Maven Repository](https://mvnrepository.com/artifact/com.github.nyla-solutions/dataTx-geode-extensions-core).
 
 	
 	<dependency>
 	    <groupId>com.github.nyla-solutions</groupId>
-	    <artifactId>gedi-geode-extensions-core</artifactId>
+	    <artifactId>dataTx-geode-extensions-core</artifactId>
 	    <version>${VERSION}</version>
 	</dependency>
 
@@ -122,12 +122,12 @@ Get the Apache Geode client cache
  
  The following will extract a single statistic type with the name "CachePerfStats"
  
- 	`java gedi.solutions.geode.operations.stats.GfStatsReader /stats/stats.gfs CachePerfStats   /Projects/stats/CachePerfStats.csv`
+ 	`java io.pivotal.services.dataTx.geode.stats.GfStatsReader /stats/stats.gfs CachePerfStats   /Projects/stats/CachePerfStats.csv`
  
  
  To export all statistics with a file name pattern `<name>.gfs.<type>.csv` in the same directory as the stat file.
  
- 	`java gedi.solutions.geode.operations.stats.GfStatsReader /Projects/analysis/DigitIT/stats/stats.gfs`
+ 	`java io.pivotal.services.dataTx.geode.operations.stats.GfStatsReader /Projects/analysis/DigitIT/stats/stats.gfs`
 
  
 ## GemFire Commercial Repository

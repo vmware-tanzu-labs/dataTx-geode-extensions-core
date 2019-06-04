@@ -1,3 +1,0 @@
-connect
-deploy --dir=/Projects/solutions/Global/dev/Solutions.Grid/Solutions.GEDI.GemFire/lib
-start server --name=s1  --cache-xml-file="/Projects/solutions/Global/dev/Solutions.Grid/Solutions.GEDI.GemFire/src/main/resources/gedi-server.xml"

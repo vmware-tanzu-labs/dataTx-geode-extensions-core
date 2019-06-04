@@ -13,9 +13,9 @@
 <cache>
     <disk-store name="ds1" auto-compact="true" max-oplog-size="1024" queue-size="0" time-interval="1">
 	<disk-dirs>
-		<disk-dir  dir-size="4096">/Projects/solutions/Global/dev/Solutions.Grid/Solutions.GEDI.GemFire/runtime/gemfire/persistence/server2/data1</disk-dir>
-		<disk-dir dir-size="4096">/Projects/solutions/Global/dev/Solutions.Grid/Solutions.GEDI.GemFire/runtime/gemfire/persistence/server2/data2</disk-dir>
-		<disk-dir dir-size="4096">/Projects/solutions/Global/dev/Solutions.Grid/Solutions.GEDI.GemFire/runtime/gemfire/persistence/server2/data3</disk-dir>
+		<disk-dir  dir-size="4096">runtime/gemfire/persistence/server2/data1</disk-dir>
+		<disk-dir dir-size="4096">runtime/gemfire/persistence/server2/data2</disk-dir>
+		<disk-dir dir-size="4096">runtime/gemfire/persistence/server2/data3</disk-dir>
 	</disk-dirs>
     </disk-store>
 
