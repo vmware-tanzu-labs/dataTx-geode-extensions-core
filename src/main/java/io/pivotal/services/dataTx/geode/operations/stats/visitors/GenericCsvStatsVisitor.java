@@ -131,7 +131,7 @@ public class GenericCsvStatsVisitor implements StatsVisitor
 			file = csvFile;
 		else
 			file = Paths.get(this.outputDirectory.toFile().getAbsolutePath(), this.statsFile.getName()+"."+resourceInst.getType().getName()+".csv").toFile();
-	
+
 		CsvWriter csvWriter = new CsvWriter(file);
 		
 		try

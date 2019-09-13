@@ -86,6 +86,10 @@ public class GfStatsReader implements StatsInfo
 	private final static int BUFFER_SIZE = 1024 * 1024;
 	private final ArrayList<ComboValue> fileComboValues = new ArrayList<ComboValue>();
 
+	public GfStatsReader(File archiveName) throws IOException
+	{
+		this(archiveName, false, null);
+	}
 	public GfStatsReader(String archiveName) throws IOException
 	{
 		this(archiveName, false, null);
@@ -98,7 +102,11 @@ public class GfStatsReader implements StatsInfo
 
 	public GfStatsReader(String archiveName, boolean dump, ValueFilter[] filters) throws IOException
 	{
-		this.archive = new File(archiveName);
+		this(new File(archiveName),dump,filters);
+	}
+	public GfStatsReader(File archiveName, boolean dump, ValueFilter[] filters) throws IOException
+	{
+		this.archive = archiveName;
 		this.dump = dump;
 		this.compressed = archive.getPath().endsWith(".gz");
 		this.is = new FileInputStream(this.archive);
@@ -653,7 +661,7 @@ public class GfStatsReader implements StatsInfo
 		}
 		if (initialize)
 		{
-			StatDescriptor[] stats = resourceInstTable[resourceInstId].getType().getStats();
+			StatDescriptor[] stats = this.getStats(resourceInstTable[resourceInstId]);
 			for (int i = 0; i < stats.length; i++)
 			{
 				long v;
@@ -771,8 +779,16 @@ public class GfStatsReader implements StatsInfo
 			{
 				System.out.print("  instId=" + resourceInstId);
 			}
-			StatDescriptor[] stats = resourceInstTable[resourceInstId].getType().getStats();
+
 			int statOffset = dataIn.readUnsignedByte();
+			StatDescriptor[] stats = null;
+
+			if(resourceInstTable != null)
+				stats = getStats(resourceInstTable[resourceInstId]);
+
+			if(stats == null)
+				return;
+
 			while (statOffset != ILLEGAL_STAT_OFFSET)
 			{
 				long statDeltaBits;
@@ -821,6 +837,18 @@ public class GfStatsReader implements StatsInfo
 				inst.addTimeStamp();
 			}
 		}
+	}
+
+	private StatDescriptor[] getStats(ResourceInst resourceInst)
+	{
+		if(resourceInst == null)
+			return null;
+
+		ResourceType type = resourceInst.getType();
+		if(type == null)
+			return null;
+
+		return type.getStats();
 	}
 
 	/**

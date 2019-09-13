@@ -18,6 +18,7 @@ import io.pivotal.services.dataTx.geode.security.UserSecuredCredentials;
 import nyla.solutions.core.exception.ConfigException;
 import nyla.solutions.core.security.SecuredToken;
 import nyla.solutions.core.util.Config;
+import org.apache.geode.cache.client.PoolFactory;
 
 /**
  * <pre>
@@ -69,7 +70,7 @@ public class GeodeSettings
 
 	private static GeodeSettings instance = null;
 	private final String envContent;
-	private final Pattern regExpPattern = Pattern.compile("(.*)\\[(\\d*)\\].*");
+	private static final Pattern regExpPattern = Pattern.compile("(.*)\\[(\\d*)\\].*");
 
 	private int port;
 
@@ -135,8 +136,48 @@ public class GeodeSettings
 		}
 		return instance;
 	}// ------------------------------------------------
-	
-	
+
+	/**
+	 * Build the pool locator connection details
+	 * @param locators the locator connection string
+	 * @param factory the pool factory
+	 */
+	public static void constructLocators(String locators, PoolFactory factory)
+	{
+		constructConnection(locators,new PoolFactoryBuilder(factory));
+
+	}//------------------------------------------------
+
+	private static void constructConnection(String locators,ConnectionBuilder builder)
+	{
+		if(locators == null || locators.length() == 0)
+			throw new IllegalArgumentException("locators is required");
+
+		String[] parsedLocators = locators.split(",");
+
+		String host,portText;
+		int port;
+		for (String hostPort : parsedLocators)
+		{
+			Matcher m = regExpPattern.matcher(hostPort);
+			if (!m.matches())
+			{
+				throw new IllegalStateException("Unexpected locator format. expected host[port], but got:" +  hostPort);
+			}
+
+			host = m.group(1);
+			portText = m.group(2);
+
+			try{
+				port = Integer.parseInt(portText);
+			}
+			catch(NumberFormatException e){
+				throw new IllegalStateException("Invalid port expected host[port], but got:" +  hostPort);
+			}
+
+			builder.addHostPort(host,port );
+		}
+	}//------------------------------------------------
 
 	@SuppressWarnings("unchecked")
 	public String getLocators()

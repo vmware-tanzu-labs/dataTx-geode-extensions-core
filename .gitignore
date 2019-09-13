@@ -3,6 +3,7 @@ pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
+secret/
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
@@ -14,6 +15,8 @@ buildNumber.properties
 *.keystore
 junit-tools-generatedsrc/
 .DS_Store
+.idea/
+dataTx-geode-extensions-core.iml
 
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)

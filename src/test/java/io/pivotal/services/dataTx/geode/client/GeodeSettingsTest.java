@@ -7,6 +7,7 @@ import java.net.URI;
 import java.util.List;
 
 import org.apache.geode.cache.client.ClientCacheFactory;
+import org.apache.geode.cache.client.PoolFactory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -16,8 +17,30 @@ import io.pivotal.services.dataTx.geode.client.GeodeSettings;
 import nyla.solutions.core.io.IO;
 import nyla.solutions.core.util.Config;
 
+/**
+ * @author Gregory Green
+ */
 public class GeodeSettingsTest
 {
+
+	@Test
+	public void test_connection_builder_with_locators(){
+
+		PoolFactory factory1 = mock(PoolFactory.class);
+		String locators1 = "host1[1002]";
+		GeodeSettings.constructLocators(locators1,factory1);
+
+		verify(factory1,atLeast(1)).addLocator(anyString(),anyInt());
+
+		PoolFactory factory2 = mock(PoolFactory.class);
+
+		String locators2 = "host1[1002],host[232]";
+		GeodeSettings.constructLocators(locators2,factory2);
+
+		verify(factory1,atLeast(1)).addLocator(anyString(),anyInt());
+
+
+	}
 	@Test
 	public void testGetLocatorUrlList() throws Exception
 	{
@@ -28,7 +51,7 @@ public class GeodeSettingsTest
 		List<URI> list = GeodeSettings.getInstance().getLocatorUrlList();
 		assertTrue(list != null && !list.isEmpty());
 		
-	}
+	}//--------------------------------------
 	@Test
 	public void testLocatorsBuild() throws Exception
 	{
@@ -59,7 +82,7 @@ public class GeodeSettingsTest
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}//----------------------------------
 
 	@Test
 	public void testGetInstance()
