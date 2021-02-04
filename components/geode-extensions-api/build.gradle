@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+group = 'io.pivotal.services.dataTx'
+version = '2.5.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+ext {
+    geodeVersion = '1.12.0'
+//    geodeVersion = '1.9.2'
+}
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+dependencies {
+    compile group: 'org.apache.geode', name: 'geode-core', version: geodeVersion
+    compile group: 'org.apache.geode', name: 'geode-core', version: geodeVersion
+    compile group: 'org.apache.geode', name: 'geode-common', version: geodeVersion
+    compile group: 'org.apache.geode', name: 'geode-lucene', version: geodeVersion
+    compile group: 'org.apache.geode', name: 'geode-cq', version: geodeVersion
+    compile group: 'org.apache.geode', name: 'geode-wan', version: geodeVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.1'
+    compile group: 'org.apache.geode', name: 'geode-logging', version: '1.13.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.1'
+
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.7.7'
+    compile group: 'com.github.nyla-solutions', name: 'nyla.solutions.core', version: '1.4.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+
+}
+test {
+    // Enable JUnit 5 (Gradle 4.6+).
+    useJUnitPlatform()
+
+    // Always run tests, even when nothing changed.
+    dependsOn 'cleanTest'
+
+    // Show test results.
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

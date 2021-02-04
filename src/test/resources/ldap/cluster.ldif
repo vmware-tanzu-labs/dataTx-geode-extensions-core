@@ -1,9 +1,0 @@
-dn: uid=cluster,ou=system
-objectClass: inetOrgPerson
-objectClass: top
-objectClass: person 
-objectClass: organizationalPerson
-cn: cluster 
-uid: cluster 
-sn: administrator
-userPassword: cluster
