@@ -3,6 +3,7 @@ plugins {
     id 'idea'
 }
 group = 'io.pivotal.services.dataTx'
+archivesBaseName = 'dataTx-geode-extensions-core'
 version = '2.5.0-SNAPSHOT'
 sourceCompatibility = '11'
 

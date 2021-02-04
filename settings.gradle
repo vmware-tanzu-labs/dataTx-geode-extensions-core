@@ -9,3 +9,4 @@
 
 rootProject.name = 'dataTx-geode-extensions-core'
 include "components:geode-extensions-api"
+include "components:geode-extensions-spring-security"
